@@ -1,0 +1,17 @@
+{
+  "id": "jd-backend-low-match",
+  "skill": "jd-analysis",
+  "timeoutMs": 300000,
+  "prompt": "请使用 jd-analysis 技能解析以下 JD，卡片保存为 data/jds/云筑科技-Java后端开发工程师.md。\n\n【JD 原文】\n云筑科技｜Java 后端开发工程师（校招）｜杭州｜20-35k·14薪\n\n岗位职责：\n1. 负责建材供应链 SaaS 平台的核心业务系统开发（订单、结算、库存）；\n2. 参与微服务架构演进，保障系统稳定性与性能；\n3. 编写技术方案文档，参与代码评审。\n\n任职要求：\n1. 本科及以上学历，计算机相关专业，2026/2027 届应届生；\n2. 精通 Java，熟悉 Spring Boot / MyBatis，理解 JVM 原理与常用调优手段；\n3. 熟悉 MySQL、Redis，了解消息队列（Kafka/RocketMQ）；\n4. 了解 Docker 与 Kubernetes 基本使用；\n5. 有大型互联网实习经验者优先。\n\n加分项：参与过高并发系统设计；有开源项目贡献。\n工作强度：日常 10-7-5，大促期间有加班。流程：笔试 → 两轮技术面 → HR 面。",
+  "outputs": ["data/jds/云筑科技-Java后端开发工程师.md"],
+  "assertions": [
+    { "kind": "file_exists" },
+    { "kind": "frontmatter", "field": "公司", "pattern": "云筑科技", "partial": true },
+    { "kind": "frontmatter", "field": "匹配度", "pattern": "\\d{1,3}", "maxValue": 60 },
+    { "kind": "contains", "text": "## 硬性要求" },
+    { "kind": "contains", "text": "## 加分项" },
+    { "kind": "contains", "text": "## 红线与风险" },
+    { "kind": "contains", "text": "## 匹配度分析" },
+    { "kind": "contains", "text": "## 投递建议" }
+  ]
+}

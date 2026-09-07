@@ -1,0 +1,16 @@
+{
+  "id": "jd-minimal-edge",
+  "skill": "jd-analysis",
+  "timeoutMs": 300000,
+  "prompt": "请使用 jd-analysis 技能解析以下 JD，卡片保存为 data/jds/光子工作室-游戏AI算法实习生.md。这条 JD 来自群转发，信息很少：\n\n【JD 原文】\n【校招/实习】光子工作室群招游戏 AI 算法实习生，base 深圳，待遇面议，发简历到群里 @HR 就行，要求会深度学习，玩过 MOBA 或 FPS 游戏优先。",
+  "outputs": ["data/jds/光子工作室-游戏AI算法实习生.md"],
+  "assertions": [
+    { "kind": "file_exists" },
+    { "kind": "frontmatter", "field": "公司", "pattern": "光子工作室", "partial": true },
+    { "kind": "frontmatter", "field": "匹配度", "pattern": "\\d{1,3}" },
+    { "kind": "contains", "text": "## 硬性要求" },
+    { "kind": "contains", "text": "## 投递建议" },
+    { "kind": "contains", "text": "未提及", "name": "缺失字段标注未提及（薪资/学历）" },
+    { "kind": "contains", "text": "深圳", "name": "提取到城市深圳" }
+  ]
+}

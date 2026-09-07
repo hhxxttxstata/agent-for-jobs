@@ -1,0 +1,34 @@
+{
+  "defaultKeywords": ["AI", "大模型", "Agent", "算法", "深度学习", "机器学习", "NLP", "CV", "图像", "医疗", "LLM"],
+  "cohorts": ["2027届", "不限"],
+  "sources": [
+    {
+      "id": "xixicc2027",
+      "name": "xixicc2027 秋招信息聚合",
+      "type": "github-json",
+      "format": "xixicc",
+      "urls": [
+        "https://cdn.jsdelivr.net/gh/xixicc186/xixicc2027@main/jobs.json",
+        "https://raw.githubusercontent.com/xixicc186/xixicc2027/main/jobs.json"
+      ],
+      "enabled": true,
+      "note": "2027届秋招信息聚合（每日更新），含大模型/多模态/AI Infra 岗位分类，多渠道交叉校验"
+    },
+    {
+      "id": "pdd-campus",
+      "name": "拼多多（上海寻梦）校园招聘",
+      "type": "html",
+      "urls": ["https://careers.pddglobalhr.com/campus"],
+      "enabled": false,
+      "note": "职位列表需 JS/登录，公开 HTML 抓不到岗位数据；待运行时用 DevTools 找到稳定 JSON 接口后改为 api 类型启用"
+    },
+    {
+      "id": "myhexin-campus",
+      "name": "同花顺校园招聘",
+      "type": "html",
+      "urls": ["https://career.myhexin.com"],
+      "enabled": false,
+      "note": "域名当前不可达（DNS 失败）；确认同花顺招聘真实域名后启用"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "agent-for-jobs",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "秋招求职 Agent：基于 pi harness，解决 JD 信息过载 / 多版本简历 / 面试复盘流失",
+  "scripts": {
+    "eval": "node evals/run.mjs",
+    "eval:dry": "node evals/run.mjs --dry-run",
+    "selftest": "node evals/selftest.mjs && node evals/selftest-extensions.mjs && node evals/selftest-job-scout.mjs",
+    "jobs": "node .pi/skills/job-scout/scripts/fetch-jobs.mjs",
+    "resume-pdf": "node .pi/skills/resume-pdf/scripts/md2pdf.mjs",
+    "migrate:myagent": "node scripts/migrate-myagent.mjs",
+    "resume-watch": "node watch-resume.mjs",
+    "evolve": "node evals/evolve.mjs",
+    "evolve:apply": "node evals/evolve.mjs --apply"
+  }
+}

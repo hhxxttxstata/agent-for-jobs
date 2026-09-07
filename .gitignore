@@ -1,0 +1,36 @@
+# 隐私：真实简历与求职数据不入库（保留目录结构用 .gitkeep）
+data/profile/*
+!data/profile/.gitkeep
+data/jds/*
+!data/jds/.gitkeep
+data/resumes/*
+!data/resumes/index.md
+!data/resumes/.gitkeep
+data/reviews/*
+!data/reviews/.gitkeep
+data/telemetry/*
+!data/telemetry/.gitkeep
+
+# 记忆与题库含个人信息，默认忽略；如愿意可手动纳入
+data/memory/*
+!data/memory/.gitkeep
+
+# 迁移源材料（myagent 会话日志与 trace，含个人对话记录）
+data/history/
+
+# 本地私有配置与凭据
+models.json
+.env
+scripts/redact-map.local.json
+
+# 编辑器会话产物
+.zcode/
+
+# 大体积中文字体（Adobe 宋体/楷体/黑体，约 44MB，请自行放置到该目录）
+.pi/skills/resume-pdf/templates/fonts/zh_CN-Adobe/
+
+# 评测产物与备份
+evals/reports/*
+!evals/reports/.gitkeep
+.pi/backup/
+node_modules/

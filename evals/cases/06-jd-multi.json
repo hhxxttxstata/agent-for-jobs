@@ -1,0 +1,49 @@
+{
+  "id": "jd-multi-two-jds",
+  "skill": "jd-analysis",
+  "timeoutMs": 420000,
+  "prompt": "请使用 jd-analysis 技能分别解析以下两条 JD，卡片分别保存为 data/jds/飞天科技-大模型应用工程师.md 和 data/jds/蓝湖设计-AI产品实习生.md。\n\n【JD 1 原文】\n飞天科技｜大模型应用工程师（校招）｜北京｜35-60k·16薪\n岗位职责：负责大模型在行业场景的落地应用，包括 RAG 检索增强系统搭建、Agent 工具编排、Prompt 工程与效果评估。\n任职要求：1. 硕士及以上，计算机/软件相关专业；2. 熟悉 RAG 全链路（分块、向量化、检索、重排），用过至少一种向量数据库；3. 有 LLM Agent 开发经验，理解 Function Calling；4. Python 工程能力强，有 FastAPI 等服务框架经验；5. 会搭建效果评估体系（离线指标 + LLM-as-Judge）。加分：有医学/法律等垂直领域落地经验；熟悉 Docker 部署。\n\n【JD 2 原文】\n蓝湖设计｜AI 产品实习生｜远程｜200-300/天\n要求：1. 本科在读及以上，专业不限；2. 对 AI 产品有热情，深度用过至少 5 款 AI 应用；3. 能写 PRD，会用 Figma；4. 每周实习 4 天以上，实习 3 个月以上。职责：协助打磨 AI 设计工具的功能体验，收集用户反馈并输出改进建议。",
+  "outputs": [
+    "data/jds/飞天科技-大模型应用工程师.md",
+    "data/jds/蓝湖设计-AI产品实习生.md"
+  ],
+  "assertions": [
+    {
+      "kind": "file_exists",
+      "target": "data/jds/飞天科技-大模型应用工程师.md"
+    },
+    {
+      "kind": "file_exists",
+      "target": "data/jds/蓝湖设计-AI产品实习生.md"
+    },
+    {
+      "kind": "frontmatter",
+      "target": "data/jds/飞天科技-大模型应用工程师.md",
+      "field": "公司",
+      "pattern": "飞天科技",
+      "partial": true
+    },
+    {
+      "kind": "frontmatter",
+      "target": "data/jds/蓝湖设计-AI产品实习生.md",
+      "field": "公司",
+      "pattern": "蓝湖设计",
+      "partial": true
+    },
+    {
+      "kind": "contains",
+      "target": "data/jds/飞天科技-大模型应用工程师.md",
+      "text": "## 硬性要求"
+    },
+    {
+      "kind": "contains",
+      "target": "data/jds/蓝湖设计-AI产品实习生.md",
+      "text": "## 硬性要求"
+    },
+    {
+      "kind": "contains",
+      "target": "data/jds/飞天科技-大模型应用工程师.md",
+      "text": "RAG"
+    }
+  ]
+}

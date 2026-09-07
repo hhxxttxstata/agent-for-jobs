@@ -1,0 +1,24 @@
+{
+  "id": "jd-algo-high-match",
+  "skill": "jd-analysis",
+  "timeoutMs": 300000,
+  "prompt": "请使用 jd-analysis 技能解析以下 JD，卡片保存为 data/jds/星辰AI-图像算法工程师.md。\n\n【JD 原文】\n星辰智鉴（星辰AI）｜图像算法工程师（医学影像方向）｜上海/北京｜30-50k·15薪\n\n我们是一家专注心肺影像 AI 诊断产品的公司，团队来自顶尖医学院校与互联网大厂，产品已进入 30+ 家三甲医院。\n\n岗位职责：\n1. 负责肺部 CT 影像的病灶检测与分类算法研发，包括数据管线、模型训练与评估；\n2. 参与从数据标注规范、弱监督/半监督方案到模型可解释性分析的完整研发闭环；\n3. 与放射科医生协作，将算法能力沉淀为可靠的临床辅助诊断功能。\n\n任职要求：\n1. 硕士及以上学历，计算机/自动化/生物医学工程等相关专业，2027 届及以前毕业；\n2. 扎实的深度学习基础，精通 PyTorch，熟悉常用视觉骨干网络与训练技巧；\n3. 熟悉医学影像处理流程，了解 DICOM/NIfTI 等格式与预处理方法；\n4. 有图像分类/检测/分割项目的完整经验，能独立设计实验并分析结果；\n5. 良好的工程能力，能写出可维护的数据处理与训练代码。\n\n加分项：\n1. 有知识蒸馏、弱监督学习、多实例学习（MIL）相关研究或项目经验；\n2. 发表过 MICCAI/CVPR 等领域论文；\n3. 熟悉 MONAI、SimpleITK 等医学影像工具链；\n4. 有模型可解释性（Grad-CAM 等）实践经验。\n\n流程：简历投递 → 一面（技术）→ 二面（主管）→ HR 面。简历发送至 hr@xingchen-ai.example.com。",
+  "outputs": ["data/jds/星辰AI-图像算法工程师.md"],
+  "assertions": [
+    { "kind": "file_exists" },
+    { "kind": "frontmatter", "field": "公司", "pattern": "星辰AI", "partial": true },
+    { "kind": "frontmatter", "field": "岗位", "pattern": "图像算法工程师", "partial": true },
+    { "kind": "frontmatter", "field": "状态", "pattern": "analyzed" },
+    { "kind": "frontmatter", "field": "匹配度", "pattern": "\\d{1,3}", "minValue": 60 },
+    { "kind": "contains", "text": "## 基本信息" },
+    { "kind": "contains", "text": "## 硬性要求" },
+    { "kind": "contains", "text": "## 加分项" },
+    { "kind": "contains", "text": "## 红线与风险" },
+    { "kind": "contains", "text": "## 关键词" },
+    { "kind": "contains", "text": "## 匹配度分析" },
+    { "kind": "contains", "text": "## 差距与应对" },
+    { "kind": "contains", "text": "## 投递建议" },
+    { "kind": "contains", "text": "PyTorch", "name": "提取到关键要求 PyTorch" },
+    { "kind": "contains", "text": "蒸馏", "name": "加分项含知识蒸馏" }
+  ]
+}

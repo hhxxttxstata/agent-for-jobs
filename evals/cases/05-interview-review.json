@@ -1,0 +1,21 @@
+{
+  "id": "interview-review-basic",
+  "skill": "interview-review",
+  "timeoutMs": 360000,
+  "prompt": "请使用 interview-review 技能复盘以下面试回忆，复盘报告保存为 data/reviews/星辰AI-一面-2026-09-05.md（今天按 2026-09-05 算）：\n\n【面试回忆】\n今天上午星辰AI一面，视频面，大概 50 分钟。面试官先让我自我介绍，然后让我介绍肺栓塞那个项目，追问了挺多细节：为什么用 2.5D 不用 3D、AUC 0.9824 是在哪个数据集上测的、有没有和医生的诊断结果对比过、800 例数据是怎么做质控的。中间问了一个八股题：BN 和 LN 的区别，我答得不太好，只说了个大概。还问了过拟合怎么处理，我说了数据增强和早停，面试官好像还想听正则化和 dropout，我没接上。最后问了能实习多久、什么时候能到岗。我反问了团队规模和新人培养机制。总体感觉项目部分答得还行，八股有点虚。",
+  "outputs": ["data/reviews/星辰AI-一面-2026-09-05.md"],
+  "assertions": [
+    { "kind": "file_exists" },
+    { "kind": "frontmatter", "field": "公司", "pattern": "星辰AI" },
+    { "kind": "frontmatter", "field": "轮次", "pattern": "一面" },
+    { "kind": "contains", "text": "## 面试信息" },
+    { "kind": "contains", "text": "## 问题清单" },
+    { "kind": "contains", "text": "## 表现总结" },
+    { "kind": "contains", "text": "## 知识盲区与补漏计划" },
+    { "kind": "contains", "text": "2.5D", "name": "还原了项目追问（2.5D）" },
+    { "kind": "contains", "text": "改进版答案" },
+    { "kind": "contains", "target": "data/memory/question-bank.md", "text": "过拟合", "name": "题库合并了高频问题" },
+    { "kind": "contains", "target": "data/memory/question-bank.md", "text": "频率", "name": "题库带频率字段" },
+    { "kind": "min_count", "target": "data/memory/self-notes.md", "text": "- [2026-09-05]", "count": 2, "name": "self-notes 追加了经验" }
+  ]
+}

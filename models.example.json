@@ -1,0 +1,39 @@
+{
+  "_comment": "复制到 ~/.pi/agent/models.json 后按需保留一种接入方式。方式一（推荐，Anthropic 兼容端点）使用环境变量 ANTHROPIC_AUTH_TOKEN；方式二（OpenAI 兼容端点）使用 ZHIPU_API_KEY。",
+  "providers": {
+    "zhipu": {
+      "baseUrl": "https://open.bigmodel.cn/api/anthropic",
+      "api": "anthropic-messages",
+      "apiKey": "$ANTHROPIC_AUTH_TOKEN",
+      "models": [
+        {
+          "id": "glm-5.3-flash",
+          "name": "GLM 5.3 Flash",
+          "input": ["text"],
+          "contextWindow": 128000,
+          "maxTokens": 16384,
+          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 }
+        }
+      ]
+    },
+    "zhipu-openai": {
+      "baseUrl": "https://open.bigmodel.cn/api/paas/v4",
+      "api": "openai-completions",
+      "apiKey": "$ZHIPU_API_KEY",
+      "compat": {
+        "supportsDeveloperRole": false,
+        "supportsReasoningEffort": false
+      },
+      "models": [
+        {
+          "id": "glm-5.3-flash",
+          "name": "GLM 5.3 Flash (OpenAI 兼容)",
+          "input": ["text"],
+          "contextWindow": 128000,
+          "maxTokens": 16384,
+          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 }
+        }
+      ]
+    }
+  }
+}

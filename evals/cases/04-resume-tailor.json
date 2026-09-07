@@ -1,0 +1,20 @@
+{
+  "id": "resume-tailor-basic",
+  "skill": "resume-tailor",
+  "timeoutMs": 360000,
+  "prompt": "请使用 resume-tailor 技能，基于 data/profile/master-resume.md，为岗位【星辰AI 图像算法工程师】定制简历（该岗位的 JD 卡片在 data/jds/星辰AI-图像算法工程师.md，先读取它）。定制简历保存为 data/resumes/星辰AI-图像算法工程师.md，并更新 data/resumes/index.md 索引表。",
+  "outputs": ["data/resumes/星辰AI-图像算法工程师.md"],
+  "assertions": [
+    { "kind": "file_exists" },
+    { "kind": "frontmatter", "field": "源JD", "pattern": "data/jds/星辰AI-图像算法工程师\\.md" },
+    { "kind": "frontmatter", "field": "基线", "pattern": "data/profile/master-resume\\.md" },
+    { "kind": "contains", "text": "## 定制说明" },
+    { "kind": "contains", "text": "| 位置 | 原文（摘要） | 修改后 | 理由 |" },
+    { "kind": "regex", "pattern": "\\*\\*[^*\\n]{2,20}\\*\\*：", "name": "项目要点符合风格解剖（**加粗标签**：…）" },
+    { "kind": "contains", "text": "核心技术", "name": "项目条目含核心技术行" },
+    { "kind": "contains", "text": "{{name}}", "name": "个人信息保留" },
+    { "kind": "contains", "text": "{{school}}", "name": "教育背景未删除" },
+    { "kind": "contains", "text": "医学", "name": "医学影像项目仍在" },
+    { "kind": "contains", "target": "data/resumes/index.md", "text": "星辰AI", "name": "版本索引已更新" }
+  ]
+}
